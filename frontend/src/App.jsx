@@ -3,6 +3,17 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 
+import ProtectedRoute from "./components/ProtectedRoute";
+
+<Route
+  path="/dashboard"
+  element={
+    <ProtectedRoute>
+      <Dashboard />
+    </ProtectedRoute>
+  }
+/>
+
 function App() {
   return (
     <BrowserRouter>

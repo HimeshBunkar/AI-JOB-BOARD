@@ -2,6 +2,14 @@ import { useState, useContext } from "react";
 import API from "../api/axios";
 import { AuthContext } from "../context/AuthContext";
 
+import { useNavigate } from "react-router-dom";
+
+const navigate = useNavigate();
+
+// inside handleLogin
+login(res.data.token);
+navigate("/dashboard");
+
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
